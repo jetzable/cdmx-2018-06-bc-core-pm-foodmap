@@ -29,3 +29,13 @@ box-shadow: inset 31px 29px 93px -1px rgba(253,202,73,1);
     background-color: #A4243B;
     color: #FDCA49
 }
+
+.card-text{
+    font-size: initial;
+}
+
+#searchResults {
+    text-align: center;
+}
+
+@media (max-width: )
