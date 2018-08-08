@@ -1,10 +1,13 @@
+// Inizialize Firebase & Firestore //
 initializeFirebase();
 let db = firebase.firestore();
 let dbSettings = { timestampsInSnapshots: true };
 db.settings(dbSettings);
 
+// Creating map with user's current Location //
 loadMap('map');
 
+// Search place by price, address or name //
 const searchData = (data, searchBy) => {
   if (searchBy === 'price') {
     db.collection('places').get()
@@ -87,6 +90,7 @@ const searchData = (data, searchBy) => {
   }
 };
 
+// Modal to order food // 
 const showInfo = (info) => {
   db.collection('places').doc(info).get()
     .then(result => {
@@ -104,6 +108,7 @@ const showInfo = (info) => {
     });
 };
 
+// Click to search place //
 document.getElementById('search-btn').addEventListener('click', event => {
   document.getElementById('searchResults').innerHTML = '';
   let placeToSearch = document.getElementById('search-term').value;
